@@ -13,18 +13,20 @@ let currentUser = {
 }
 
 let users =[{
-    id:"123",
+    id:"234",
     name:"John Doe",
     age:54,
     hairColo: "brown",
     hobbies: ['swimming', 'bicycling', 'video game']
 },{
     name: "Brenda Doe",
+    id:"154",
     age:45,
     hairColor: "black",
     hobbies:['golf', 'math'],
 },{
     name: "Jane Doe",
+    id:"145",
     age:27,
     hairColor: "blonde",
     hobbies:['biology', 'maedicine', 'gymanstics'],

@@ -1,11 +1,12 @@
-import { printProps } from "./printProps";
-import { UserInfo } from "./UserInfo";
+import { printProps } from "./printProps.js";
+import { UserInfo } from "./UserInfo.js";
+import { withUser } from "./withUser.js";
 
-const UserInfoWrapped = printProps(UserInfo)
+const UserInfoWithLoader = withUser(UserInfo, '145')
 
 function App() {
   return (
-    <UserInfoWrapped a={1} b="Hello" c={{ name:"shaun"}} />
+    <UserInfoWithLoader  />
   )
 }
 
