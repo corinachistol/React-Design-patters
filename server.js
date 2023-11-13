@@ -73,6 +73,6 @@ app.get('/products', (req,res)=>{
     res.json(products)
 } )
 
-app.listen(8080, ()=>{
-    console.log('server is listening on port 8080')
+app.listen(3000, ()=>{
+    console.log('server is listening on port 3000')
 })
