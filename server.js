@@ -56,7 +56,7 @@ app.get('/current-user', (req,res)=>{
 
 app.get('/users:id', (req,res)=>{
     const {id} = req.params
-    res.json((products.find(product => product.id === id)))
+    res.json(users.find(user=>user.id === id))
     
 })
 
@@ -66,11 +66,14 @@ app.post('/users:id', (req,res)=>{
 
     users = users.map(user => user.id === id ? updateUser : null)
 
-    res.json(users.find(user=>user.id === id))
+    
 })
 
 app.get('/products', (req,res)=>{
     res.json(products)
+} )
+app.get('/users', (req,res)=>{
+    res.json(users)
 } )
 
 app.listen(3000, ()=>{
