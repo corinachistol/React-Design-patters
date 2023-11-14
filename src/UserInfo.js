@@ -1,7 +1,8 @@
+import { useResource } from './useResource.js';
 import {useUser} from './useUser.js';
 
 export const UserInfo = ({userId} ) => {
-    const user = useUser(userId)
+    const user = useResource(`http://localhost:3000/users/${userId}`)
     const { name,age,hairColor,hobbies } = user || {}
 
     return user ? (

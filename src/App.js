@@ -1,13 +1,13 @@
 import { UserInfo } from "./UserInfo.js";
-
+import { ProductInfo } from "./ProductInfo.js";
 
 
 function App() {
   return (
     <>
     <UserInfo userId="123" />
-    <UserInfo userId="234" />
-    <UserInfo userId="145" />
+    <ProductInfo productId="123" />
+  
     </>
   )
 }

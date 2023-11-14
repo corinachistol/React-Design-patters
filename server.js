@@ -33,17 +33,20 @@ let users =[{
 }]
 
 let products =[{
+    id:"123",
     name:"Flat-Screen Tv",
     price:"$300",
     description: "Huge LCS screen, a great deal",
     rating:4.5
   }, {
     name:"Basketball",
+    id:"234",
     price:"$10",
     description: "Like the pros use",
     rating:3.8
   }, {
     name:"running Shoes",
+    id:"145",
     price:"$120",
     description: "Like the pros use",
     rating:4.2
@@ -54,26 +57,32 @@ app.get('/current-user', (req,res)=>{
 })
 
 
-app.get('/users:id', (req,res)=>{
+app.get('/users/:id', (req,res)=>{
     const {id} = req.params
-    res.json(users.find(user=>user.id === id))
+    res.json((users.find(user => user.id === id)))
     
 })
+app.get('/users', (req,res)=>{
+    res.json(users)
+} )
 
-app.post('/users:id', (req,res)=>{
+app.post('/users/:id', (req,res)=>{
     const {id} = req.params
     const { user:updateUser } = req.body
 
     users = users.map(user => user.id === id ? updateUser : null)
 
+    res.json(users.find(user=>user.id === id))
+})
+
+app.get('/products/:id', (req,res)=>{
+    const {id} = req.params
+    res.json((products.find(product => product.id === id)))
     
 })
 
 app.get('/products', (req,res)=>{
     res.json(products)
-} )
-app.get('/users', (req,res)=>{
-    res.json(users)
 } )
 
 app.listen(3000, ()=>{
