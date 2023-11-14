@@ -15,3 +15,7 @@ export const useCurrentUser = () => {
 
     return user
 }
+
+// const currentUser = useCurrentUser()
+
+// Custom Hooks = Special hooks (functions) that we define ourselves and that usually combine the functionality of one or more existing React hooks like, "useState" or "UseEffect"
