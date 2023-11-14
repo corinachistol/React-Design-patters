@@ -1,6 +1,7 @@
+import { withEditableResource } from "./withEditableResource.js"
 import { withEditableUser } from "./withEditableUser.js"
 
-export const UserInfoForm = withEditableUser (({ user, onChangeUser, onSaveUser, onResetUser }) => {
+export const UserInfoForm = withEditableResource (({ user, onChangeUser, onSaveUser, onResetUser }) => {
     const { name,age,hairColor} = user || {}
 
     return user ? (
@@ -22,4 +23,4 @@ export const UserInfoForm = withEditableUser (({ user, onChangeUser, onSaveUser,
         
         </>
     ) : <p>Loading...</p>
-}, '123')
+}, 'http://localhost:3000/users/123', 'user')
