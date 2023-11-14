@@ -7,7 +7,7 @@ export const withUser = (Component, userId) => {
 
         useEffect( () => {
             (async ()=> {
-                const response = await axios.get(`/users/${userId}`)
+                const response = await axios.get(`http://localhost:3000/users/${userId}`)
                 setUser(response.data)
             })()
         })
