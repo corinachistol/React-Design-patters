@@ -1,6 +1,6 @@
 import {useUser} from './useUser.js';
 
-export const UserInfo = ({userId} ) => {
+export const UserInfo = ( {userId} ) => {
     const user = useUser(userId)
     const { name,age,hairColor,hobbies } = user || {}
 
