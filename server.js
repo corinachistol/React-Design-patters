@@ -13,20 +13,20 @@ let currentUser = {
 }
 
 let users =[{
-    id:"234",
+    id:"123",
     name:"John Doe",
     age:54,
     hairColo: "brown",
     hobbies: ['swimming', 'bicycling', 'video game']
 },{
     name: "Brenda Doe",
-    id:"154",
+    id: "234",
     age:45,
     hairColor: "black",
     hobbies:['golf', 'math'],
 },{
     name: "Jane Doe",
-    id:"145",
+    id: "145",
     age:27,
     hairColor: "blonde",
     hobbies:['biology', 'maedicine', 'gymanstics'],
@@ -54,11 +54,14 @@ app.get('/current-user', (req,res)=>{
 })
 
 
-app.get('/users:id', (req,res)=>{
+app.get('/users/:id', (req,res)=>{
     const {id} = req.params
-    res.json((products.find(product => product.id === id)))
+    res.json((users.find(user => user.id === id)))
     
 })
+app.get('/users', (req,res)=>{
+    res.json(users)
+} )
 
 app.post('/users:id', (req,res)=>{
     const {id} = req.params
@@ -69,10 +72,16 @@ app.post('/users:id', (req,res)=>{
     res.json(users.find(user=>user.id === id))
 })
 
+app.get('/products/:id', (req,res)=>{
+    const {id} = req.params
+    res.json((products.find(product => product.id === id)))
+    
+})
+
 app.get('/products', (req,res)=>{
     res.json(products)
 } )
 
-app.listen(8080, ()=>{
-    console.log('server is listening on port 8080')
+app.listen(3000, ()=>{
+    console.log('server is listening on port 3000')
 })
